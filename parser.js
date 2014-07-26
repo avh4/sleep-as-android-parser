@@ -24,9 +24,9 @@ module.exports = function(line1, line2, line3) {
   var tokens1 = splitLine(line1);
   var tokens2 = splitLine(line2);
   var tokens3 = line3 ? splitLine(line3) : [];
-  var baseTime = moment(unquote(tokens2[2]), 'DD. MM. YYYY H:mm');
-  var lastTime = baseTime.clone();
   var timezone = unquote(tokens2[1]);
+  var baseTime = moment.tz(unquote(tokens2[2]), 'DD. MM. YYYY H:mm', timezone);
+  var lastTime = baseTime.clone();
 
   var result = { events: [], data: [] };
   result.tags = unquote(tokens2[7]).trim().split(' ').map(detag);
