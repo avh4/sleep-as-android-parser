@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/avh4/sleep-as-android-parser.svg)](http://travis-ci.org/avh4/sleep-as-android-parser)
+
 This is a script to parse and simplify the data exported by the [Sleep as Android](https://play.google.com/store/apps/details?id=com.urbandroid.sleep&hl=en) sleep tracker app.  See the [documentation](https://sites.google.com/site/sleepasandroid/doc/backup) on how to export your data in the `sleep-export.csv` format for use with this script.
 
 ### Movement data
