@@ -1,7 +1,7 @@
-var argv = require('minimist')(process.argv.slice(2), { boolean: ['csv-data'] });
+var argv = require('minimist')(process.argv.slice(2), { boolean: ['csv-data', 'csv-events'] });
 
 function showUsage() {
-  console.log('Usage: main.js [--csv-data] <sleep-export.csv>');
+  console.log('Usage: main.js [--csv-data|--csv-events] <sleep-export.csv>');
 }
 
 if (argv._.length != 1) {
@@ -25,6 +25,19 @@ if (argv._.length != 1) {
       record: function(d) {
         d.data.forEach(function(d) {
           console.log(d.time + ',' + d.movement);
+        });
+      }
+    };
+  }
+
+  if (argv['csv-events']) {
+    output = {
+      header: function() {
+        console.log('Timestamp,Event');
+      },
+      record: function(d) {
+        d.events.forEach(function(d) {
+          console.log(d.time + ',' + d.event);
         });
       }
     };
