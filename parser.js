@@ -18,7 +18,7 @@ function detag(string) {
 
 module.exports = function(line1, line2, line3) {
   if (!startsWith(line1, 'Id,Tz,From,To,Sched,Hours,Rating,Comment,Framerate,Snore,Noise,Cycles,DeepSleep,LenAdjust,Geo')) {
-    throw new Error('invalid file');
+    throw new Error('invalid file: ' + line1);
   }
 
   var tokens1 = splitLine(line1);
