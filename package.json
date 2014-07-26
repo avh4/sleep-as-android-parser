@@ -1,0 +1,10 @@
+{
+  "name": "sleep-as-android-parser",
+  "version": "0.0.0",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.0"
+  }
+}
