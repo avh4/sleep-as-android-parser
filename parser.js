@@ -33,7 +33,7 @@ module.exports = function(line1, line2, line3) {
     if (tokens1[i] === '"Event"') {
       var d = unquote(tokens2[i]).split('-');
       result.events.push({
-        time: moment.utc(parseInt(d[1])).format('YYYY-MM-DDThh:mm:ss.SSS\\Z'),
+        time: moment(parseInt(d[1])).format('YYYY-MM-DDTHH:mm:ss.SSSZZ'),
         event: d[0]
       });
     } else if (tokens1[i].match(/"\d?\d:\d\d"/)) {
