@@ -5,6 +5,11 @@
     "test": "mocha"
   },
   "devDependencies": {
-    "mocha": "^1.21.0"
+    "mocha": "^1.21.0",
+    "sinon": "^1.10.3"
+  },
+  "dependencies": {
+    "byline": "^4.1.1",
+    "q": "^1.0.1"
   }
 }
