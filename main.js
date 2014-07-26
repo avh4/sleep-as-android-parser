@@ -20,11 +20,11 @@ if (argv._.length != 1) {
   if (argv['csv-data']) {
     output = {
       header: function() {
-        console.log('Timestamp,Movement');
+        console.log('Timestamp,Movement,Noise');
       },
       record: function(d) {
         d.data.forEach(function(d) {
-          console.log(d.time + ',' + d.movement);
+          console.log(d.time + ',' + d.movement + ',' + (d.noise || ''));
         });
       }
     };

@@ -23,6 +23,7 @@ module.exports = function(line1, line2, line3) {
 
   var tokens1 = splitLine(line1);
   var tokens2 = splitLine(line2);
+  var tokens3 = line3 ? splitLine(line3) : [];
   var baseTime = moment(unquote(tokens2[2]), 'DD. MM. YYYY h:mm');
   var lastTime = baseTime.clone();
 
@@ -46,7 +47,8 @@ module.exports = function(line1, line2, line3) {
       lastTime = time;
       result.data.push({
         time: time.format('YYYY-MM-DDThh:mmZZ'),
-        movement: parseFloat(unquote(tokens2[i]))
+        movement: parseFloat(unquote(tokens2[i])),
+        noise: tokens3[i] ? parseFloat(unquote(tokens3[i])) : undefined
       });
     }
   }
