@@ -23,5 +23,35 @@ describe('parser', function() {
     it('parses the tags', function() {
       assert.deepEqual(result.tags, ['home', 'early']);
     });
+
+    it('parses the events', function() {
+      assert.deepEqual(result.events, [
+        { time: '2014-07-26T09:37:27.010Z', event: 'LIGHT_START' },
+        { time: '2014-07-26T09:40:47.276Z', event: 'LIGHT_END' },
+        { time: '2014-07-26T09:40:47.276Z', event: 'DEEP_START' },
+        { time: '2014-07-26T10:44:13.926Z', event: 'REM_START' },
+        { time: '2014-07-26T11:04:13.926Z', event: 'REM_END' },
+        { time: '2014-07-26T11:04:13.926Z', event: 'LIGHT_START' },
+        { time: '2014-07-26T11:04:13.926Z', event: 'DEEP_END' },
+        { time: '2014-07-26T11:27:35.788Z', event: 'LIGHT_END' },
+        { time: '2014-07-26T11:27:35.788Z', event: 'DEEP_START' },
+        { time: '2014-07-26T11:54:17.916Z', event: 'LIGHT_START' },
+        { time: '2014-07-26T11:54:17.916Z', event: 'DEEP_END' },
+        { time: '2014-07-26T11:57:38.182Z', event: 'LIGHT_END' },
+        { time: '2014-07-26T11:57:38.182Z', event: 'DEEP_START' },
+        { time: '2014-07-26T12:27:40.576Z', event: 'LIGHT_START' },
+        { time: '2014-07-26T12:27:40.576Z', event: 'DEEP_END' },
+        { time: '2014-07-26T12:31:00.842Z', event: 'LIGHT_END' },
+        { time: '2014-07-26T12:31:00.842Z', event: 'DEEP_START' },
+        { time: '2014-07-26T01:01:03.236Z', event: 'LIGHT_START' },
+        { time: '2014-07-26T01:01:03.236Z', event: 'DEEP_END' },
+        { time: '2014-07-26T01:14:24.300Z', event: 'LIGHT_END' },
+        { time: '2014-07-26T01:14:24.300Z', event: 'DEEP_START' },
+        { time: '2014-07-26T01:47:48.563Z', event: 'REM_START' },
+        { time: '2014-07-26T02:07:48.515Z', event: 'TRACKING_STOPPED_BY_USER' },
+        { time: '2014-07-26T02:07:48.563Z', event: 'REM_END' },
+        { time: '2014-07-26T02:07:48.563Z', event: 'DEEP_END' }
+      ]);
+    })
   });
 });
