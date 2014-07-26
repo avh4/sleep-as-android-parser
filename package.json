@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "byline": "^4.1.1",
+    "minimist": "^0.2.0",
     "moment": "^2.7.0",
     "q": "^1.0.1"
   }
