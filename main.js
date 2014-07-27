@@ -10,37 +10,14 @@ if (argv._.length != 1) {
   var chunker = require('./chunker');
   var parser = require('./parser');
 
-  var output = {
-    header: function() {},
-    record: function(d) {
-      console.log(d);
-    }
-  };
+  var output;
 
   if (argv['csv-data']) {
-    output = {
-      header: function() {
-        console.log('Timestamp,Movement,Noise');
-      },
-      record: function(d) {
-        d.data.forEach(function(d) {
-          console.log(d.time + ',' + d.movement + ',' + (d.noise || ''));
-        });
-      }
-    };
-  }
-
-  if (argv['csv-events']) {
-    output = {
-      header: function() {
-        console.log('Timestamp,Event');
-      },
-      record: function(d) {
-        d.events.forEach(function(d) {
-          console.log(d.time + ',' + d.event);
-        });
-      }
-    };
+    output = require('./output/csv-data');
+  } else if (argv['csv-events']) {
+    output = require('./output/csv-events');
+  } else {
+    output = require('./output/default')
   }
 
   output.header();
