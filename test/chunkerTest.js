@@ -1,4 +1,4 @@
-var subject = require('../chunker');
+var subject = require('../src/chunker');
 var sinon = require('sinon');
 
 describe('chunker', function() {

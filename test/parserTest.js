@@ -1,4 +1,4 @@
-var subject = require('../parser');
+var subject = require('../src/parser');
 var sinon = require('sinon');
 var assert = require('assert');
 
